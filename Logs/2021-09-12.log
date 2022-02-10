@@ -1,0 +1,10 @@
+2021-09-12 23:01:54,506 - bp_home - INFO - <Request: GET /msg_info>
+2021-09-12 23:01:54,543 - bp_home - INFO - {'msg_text': '这是一条测试短信，这是一条测试短信，这是一条测试短信。', 'msg_analysis': 'This is a test message', 'simi_times': 0, 'kind_name': 'Test', 'laws': ['For test and default options'], 'solutions': ['For test only or ERROR']}
+2021-09-12 23:01:57,804 - bp_home - INFO - <Request: GET /msg_info>
+2021-09-12 23:01:57,816 - bp_home - INFO - {'msg_text': '我是**地黑社会有人出两万块钱让我打断你一条腿', 'msg_analysis': '1', 'simi_times': 0, 'kind_name': '民生', 'laws': ['law 2', '《中华人民共和国刑法》第二百六十六条诈骗公私财物，数额较大的，处三年以下有期徒刑、拘役或者管制，并处或者单处罚金；数额巨大或者有其他严重情节的，处三年以上十年以下有期徒刑，并处罚金；数额特别巨大或者有其他特别严重情节的，处十年以上有期徒刑或者无期徒刑，并处罚金或者没收财产。本法另有规定的，依照规定。', 'law 3'], 'solutions': ['solution2', 'solution3', 'solution1']}
+2021-09-12 23:02:03,494 - bp_home - INFO - <Request: GET /msg_search>
+2021-09-12 23:02:04,294 - bp_home - INFO - []
+2021-09-12 23:02:07,723 - bp_home - INFO - <Request: GET /msg_search>
+2021-09-12 23:02:07,761 - bp_home - INFO - []
+2021-09-12 23:02:54,311 - bp_home - INFO - <Request: GET /msg_search>
+2021-09-12 23:02:55,386 - bp_home - INFO - [{'msg_id': 15, 'msg_text': '我是**地黑社会有人出两万块钱让我打断你一条腿', 'simi_times': 1, 'cs_value': 1.0}]

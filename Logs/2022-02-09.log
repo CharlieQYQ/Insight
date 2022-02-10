@@ -1,0 +1,18 @@
+2022-02-09 19:13:52,729 - bp_home - INFO - <Request: GET /query_record>
+2022-02-09 19:13:52,730 - bp_home - ERROR - 'Request' object has no attribute 'arg'
+2022-02-09 19:14:37,895 - bp_home - INFO - <Request: GET /query_record>
+2022-02-09 19:14:37,895 - bp_home - ERROR - 'Request' object has no attribute 'arg'
+2022-02-09 19:16:33,368 - bp_home - INFO - <Request: GET /query_record>
+2022-02-09 19:16:33,371 - bp_home - ERROR - 'Request' object has no attribute 'arg'
+2022-02-09 19:16:42,570 - bp_home - INFO - <Request: GET /msg_info>
+2022-02-09 19:16:42,592 - bp_home - INFO - {}
+2022-02-09 19:17:33,415 - bp_home - INFO - <Request: GET /query_record>
+2022-02-09 19:17:33,417 - bp_home - ERROR - 'Request' object has no attribute 'arg'
+2022-02-09 19:19:12,752 - bp_home - INFO - <Request: GET /query_record>
+2022-02-09 19:19:12,763 - bp_home - INFO - []
+2022-02-09 19:37:07,433 - bp_home - INFO - <Request: GET /query_record>
+2022-02-09 19:37:07,438 - bp_home - INFO - []
+2022-02-09 19:41:52,068 - bp_home - INFO - <Request: GET /query_record>
+2022-02-09 19:41:52,085 - bp_home - INFO - []
+2022-02-09 19:52:30,735 - bp_home - INFO - <Request: GET /query_record>
+2022-02-09 19:52:30,748 - bp_home - INFO - [{'time': '2022-02-09 16:42:53', 'query': 'TEST'}, {'time': '2022-02-09 19:50:48', 'query': 'TEST2'}]

@@ -1,0 +1,27 @@
+1236 --- 2021-09-03 16:47:54,561 --- sanic.root --- INFO --- Goin' Fast @ http://0.0.0.0:8001
+970 --- 2021-09-03 16:47:54,562 --- sanic.root --- WARNING --- Multiprocessing is currently not supported on nt, using workers=1 instead
+576 --- 2021-09-03 16:47:54,566 --- sanic.root --- INFO --- Starting worker [12100]
+458 --- 2021-09-03 16:48:08,947 --- sanic.access --- INFO --- 
+458 --- 2021-09-03 16:48:35,144 --- sanic.access --- INFO --- 
+458 --- 2021-09-03 16:49:09,334 --- sanic.access --- INFO --- 
+458 --- 2021-09-03 18:33:03,502 --- sanic.access --- INFO --- [127.0.0.1:12301]:GET http://localhost:8001/msg_info?id=1 ---  --- 200 --- 207
+458 --- 2021-09-03 18:33:03,675 --- sanic.access --- INFO --- [127.0.0.1:12301]:GET http://localhost:8001/favicon.ico ---  --- 500 --- 41
+1236 --- 2021-09-03 18:33:53,115 --- sanic.root --- INFO --- Goin' Fast @ http://0.0.0.0:8001
+970 --- 2021-09-03 18:33:53,115 --- sanic.root --- WARNING --- Multiprocessing is currently not supported on nt, using workers=1 instead
+576 --- 2021-09-03 18:33:53,122 --- sanic.root --- INFO --- Starting worker [20044]
+458 --- 2021-09-03 18:34:00,240 --- sanic.access --- INFO --- 
+458 --- 2021-09-03 18:34:00,312 --- sanic.access --- INFO --- 
+458 --- 2021-09-03 18:34:13,501 --- sanic.access --- INFO --- 
+458 --- 2021-09-03 18:34:13,578 --- sanic.access --- INFO --- 
+458 --- 2021-09-03 18:35:00,657 --- sanic.access --- INFO --- 
+1236 --- 2021-09-03 18:37:17,281 --- sanic.root --- INFO --- Goin' Fast @ http://0.0.0.0:8001
+970 --- 2021-09-03 18:37:17,282 --- sanic.root --- WARNING --- Multiprocessing is currently not supported on nt, using workers=1 instead
+576 --- 2021-09-03 18:37:17,288 --- sanic.root --- INFO --- Starting worker [4088]
+51 --- 2021-09-03 18:37:24,125 --- __main__ --- INFO --- 404 Not Found
+458 --- 2021-09-03 18:37:24,125 --- sanic.access --- INFO --- 
+51 --- 2021-09-03 18:37:24,194 --- __main__ --- INFO --- 404 Not Found
+458 --- 2021-09-03 18:37:24,195 --- sanic.access --- INFO --- 
+458 --- 2021-09-03 18:38:24,235 --- sanic.access --- INFO --- 
+458 --- 2021-09-03 18:38:24,551 --- sanic.access --- INFO --- 
+2021-09-03 18:42:23,716 - __main__ - INFO - 404 Not Found
+2021-09-03 18:42:23,789 - __main__ - INFO - 404 Not Found

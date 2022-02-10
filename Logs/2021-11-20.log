@@ -1,0 +1,2 @@
+2021-11-20 15:29:32,017 - bp_home - INFO - <Request: GET /msg_info>
+2021-11-20 15:29:32,050 - bp_home - INFO - {'msg_text': '我是**地黑社会有人出两万块钱让我打断你一条腿', 'msg_analysis': '1', 'simi_times': 0, 'kind_name': '威胁类', 'laws': ['For test and default options'], 'solutions': ['如信息涉及近亲属及好友，应第一时间联系所在单位/学校进行确认，不可“关心则乱”，带来不必要的损失。', '如涉及生命安全，应首先保持冷静心态，及时报警，不要盲目按照信息指令进行打款、转账等操作。']}

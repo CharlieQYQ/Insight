@@ -14,6 +14,7 @@ from Funcs.Message_info import msg_info_search
 from Funcs.Query_record import query_record
 import logging
 import datetime
+from Funcs.User_star import add_star, get_user_star_list, remove_star
 # import asyncio
 
 # 配置日志
@@ -43,6 +44,7 @@ async def index(request):
     return text('index page')
 
 
+# 信息检索
 @bp_home.route('/msg_search')
 async def message_search(request):
     logger.info(request)
@@ -57,6 +59,7 @@ async def message_search(request):
         return text(e)
 
 
+# 案例信息查询
 @bp_home.route('/msg_info')
 async def message_info(request):
     logger.info(request)
@@ -70,12 +73,57 @@ async def message_info(request):
         return text(e)
 
 
+# 查询历史记录
 @bp_home.route('/query_record')
 async def history_query(request):
     logger.info(request)
     try:
-        wx_id = int(request.args.get('id', ''))
+        wx_id = str(request.args.get('id', '')).strip()
         result = await query_record(wx_id=wx_id)
+        logger.info(result)
+        return json(result, ensure_ascii=False)
+    except Exception as e:
+        logger.error(e)
+        return text(e)
+
+
+# 添加用户收藏
+@bp_home.route('/add_star')
+async def user_add_star(request):
+    logger.info(request)
+    try:
+        wx_id = str(request.args.get('id', '')).strip()
+        msg_id = int(request.args.get('msg_id', ''))
+        result = await add_star(wx_id=wx_id, msg_id=msg_id)
+        logger.info(result)
+        return json(result)
+    except Exception as e:
+        logger.error(e)
+        return text(e)
+
+
+# 删除用户收藏
+@bp_home.route('/remove_star')
+async def user_remove_star(request):
+    logger.info(request)
+    try:
+        wx_id = str(request.args.get('id', '')).strip()
+        msg_id = int(request.args.get('msg_id', ''))
+        result = await remove_star(wx_id=wx_id, msg_id=msg_id)
+        logger.info(result)
+        return json(result)
+    except Exception as e:
+        logger.error(e)
+        return text(e)
+
+
+# 获取用户收藏列表
+@bp_home.route('/get_star')
+async def get_star(request):
+    logger.info(request)
+    try:
+        wx_id = str(request.args.get('id', '')).strip()
+        result = await get_user_star_list(wx_id=wx_id)
         logger.info(result)
         return json(result, ensure_ascii=False)
     except Exception as e:

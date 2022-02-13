@@ -8,13 +8,13 @@
 
 # 导入库
 import pymysql
-import json
 import asyncio
 import sys
 import time
 import datetime
 
 sys.path.append("..")
+
 
 async def query_record(wx_id: int) -> list:
     """
@@ -38,7 +38,7 @@ async def query_record(wx_id: int) -> list:
 
         # 整理结果
         for row in record_cursor:
-            print(row)
+            # print(row)
             record_data = {
                 'time': row['Time'].strftime('%Y-%m-%d %H:%M:%S'),
                 'query': row['Query']

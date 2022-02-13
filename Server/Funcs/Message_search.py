@@ -2,7 +2,7 @@
 创建日期：2021.9.2
 作者：乔毅
 文件名：Message_search.py
-功能：通过输入短信搜索余弦相似度高于阈值的短信内容及其附属内容
+功能：通过输入短信搜索余弦相似度高于阈值的短信内容及其附属内容，并存入历史记录
 备注：代码中被注释掉的print()为 测试时调用，控制台输出没有实际意义
 """
 
@@ -25,9 +25,10 @@ stop_words = gen_stop_words()
 async def msg_search(*, query: str, flag: float, wx_id: int) -> list:
     """
     函数名：msg_search
-    作用：通过输入的短信内容搜索与之相关的短信案例
+    作用：通过输入的短信内容搜索与之相关的短信案例，并存入历史记录
     :param query: 搜索的短信字符串
     :param flag：搜索阈值
+    :param wx_id:用户微信ID
     :return: results 搜索结果
     """
 

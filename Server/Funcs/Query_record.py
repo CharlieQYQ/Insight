@@ -16,7 +16,7 @@ import datetime
 sys.path.append("..")
 
 
-async def query_record(wx_id: int) -> list:
+async def query_record(wx_id: str) -> list:
     """
     函数名：Query_record
     作用：根据微信ID获取用户所有搜索记录并返回
@@ -33,7 +33,7 @@ async def query_record(wx_id: int) -> list:
         cursor = db.cursor(pymysql.cursors.DictCursor)
 
         # 依据微信ID查询数据库
-        cursor.execute("""SELECT * FROM query_record WHERE ID = %d""" % wx_id)
+        cursor.execute("""SELECT * FROM query_record WHERE ID = %s""" % wx_id)
         record_cursor = cursor.fetchall()
 
         # 整理结果

@@ -1,15 +1,18 @@
 # Insight 后端调用说明
 > 乔毅 2019210472
-> 2021.9.3
+> 2022.3.9
 
 **本说明只针对Insight项目后端代码，且随版本不断更新**
 
 ## 模块介绍
-- 1.短信查询接口
+1. 短信查询接口
 	- 链接地址：http://abc.charlieqyq.top:32222/msg_search
 	- 请求关键字
 		- msg
 			- 查询的短信内容
+			- 字符串类型
+		- id
+			- 用户的微信ID
 			- 字符串类型
 	- 返回关键字（字典类型）
 		- msg_id
@@ -20,7 +23,7 @@
 			- 相似度超过阈值次数（即返回次数）
 		- cs_value
 			- 余弦相似度
-- 2.短信详情接口
+2. 短信详情接口
 	- 链接地址：http://abc.charlieqyq.top:32222/msg_info
 	- 请求关键字
 		- id
@@ -39,6 +42,54 @@
 			- 相关法条
 		- solutions
 			- 解决方法
+3. 历史记录接口
+	- 链接地址：http://abc.charlieqyq.top:32222/query_record
+	- 请求关键字
+		- id
+			- 查询的用户微信ID
+			- 字符串类型
+	- 返回关键字
+		- time
+			- 查询时间，格式：YYYY-MM-DD hh-mm-ss
+		- query
+			- 查询文本
+4. 添加收藏接口
+	- 链接地址：http://abc.charlieqyq.top:32222/add_star
+	- 请求关键字
+		- id
+			- 用户微信ID
+			- 字符串类型
+		- msg_id
+			- 收藏的短信序号
+			- 整型
+	- 返回关键字
+		- true：添加成功
+		- false：添加失败
+5. 删除收藏接口
+	- 链接地址：http://abc.charlieqyq.top:32222/remove_star
+	- 请求关键字
+		- id
+			- 用户微信ID
+			- 字符串类型
+		- msg_id
+			- 收藏的短信序号
+			- 整型
+	- 返回关键字
+		- true：删除成功
+		- false：删除失败
+6. 查询收藏接口
+	- 链接地址：http://abc.charlieqyq.top:32222/get_star
+	- 请求关键字
+		- id
+			- 用户微信ID
+			- 字符串类型
+	- 返回关键字
+		- msg_id
+			- 短信序号
+		- msg_text
+			- 短信文本
+
+
 
 ## 错误信息
 - 1.NotFound

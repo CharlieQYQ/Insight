@@ -1,0 +1,8 @@
+2022-03-09 07:58:25,442 - bp_home - INFO - <Request: GET /msg_search>
+2022-03-09 07:58:25,518 - bp_home - INFO - []
+2022-03-09 07:59:58,265 - bp_home - INFO - <Request: GET /msg_search>
+2022-03-09 07:59:58,267 - bp_home - INFO - []
+2022-03-09 08:00:36,810 - bp_home - INFO - <Request: GET /msg_search>
+2022-03-09 08:00:36,825 - bp_home - INFO - []
+2022-03-09 08:02:59,228 - bp_home - INFO - <Request: GET /msg_search>
+2022-03-09 08:02:59,675 - bp_home - INFO - [{'msg_id': 15, 'msg_text': '我是**地黑社会有人出两万块钱让我打断你一条腿', 'simi_times': 64, 'cs_value': 0.72169}, {'msg_id': 1, 'msg_text': '这是一条测试短信，这是一条测试短信，这是一条测试短信。', 'simi_times': 5, 'cs_value': 0.20412}]

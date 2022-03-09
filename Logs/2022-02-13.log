@@ -1,0 +1,49 @@
+2022-02-13 18:48:12,288 - bp_home - INFO - <Request: GET /query_record>
+2022-02-13 18:48:12,300 - bp_home - INFO - []
+2022-02-13 18:49:10,372 - bp_home - INFO - <Request: GET /query_record>
+2022-02-13 18:49:10,384 - bp_home - INFO - [{'time': '2022-02-09 16:42:53', 'query': 'TEST'}, {'time': '2022-02-09 19:50:48', 'query': 'TEST2'}]
+2022-02-13 18:49:13,011 - bp_home - INFO - <Request: GET /query_record>
+2022-02-13 18:49:13,016 - bp_home - INFO - [{'time': '2022-02-09 16:42:53', 'query': 'TEST'}, {'time': '2022-02-09 19:50:48', 'query': 'TEST2'}]
+2022-02-13 18:49:29,888 - bp_home - INFO - <Request: GET /add_star>
+2022-02-13 18:49:29,897 - bp_home - INFO - True
+2022-02-13 18:50:02,648 - bp_home - INFO - <Request: GET /add_star>
+2022-02-13 18:50:02,653 - bp_home - INFO - True
+2022-02-13 18:52:00,304 - bp_home - INFO - <Request: GET /add_star>
+2022-02-13 18:52:00,325 - bp_home - INFO - True
+2022-02-13 18:53:11,400 - bp_home - INFO - <Request: GET /add_star>
+2022-02-13 18:53:11,417 - bp_home - INFO - True
+2022-02-13 18:55:07,788 - bp_home - INFO - <Request: GET /add_star>
+2022-02-13 18:55:07,797 - bp_home - INFO - True
+2022-02-13 18:55:29,889 - bp_home - INFO - <Request: GET /add_star>
+2022-02-13 18:55:29,892 - bp_home - INFO - False
+2022-02-13 18:56:05,168 - bp_home - INFO - <Request: GET /add_star>
+2022-02-13 18:56:05,179 - bp_home - INFO - False
+2022-02-13 18:57:27,976 - bp_home - INFO - <Request: GET /add_star>
+2022-02-13 18:57:27,986 - bp_home - INFO - False
+2022-02-13 18:58:37,067 - bp_home - INFO - <Request: GET /add_star>
+2022-02-13 18:58:37,083 - bp_home - INFO - True
+2022-02-13 19:00:11,621 - bp_home - INFO - <Request: GET /add_star>
+2022-02-13 19:00:11,627 - bp_home - INFO - False
+2022-02-13 19:04:42,643 - bp_home - INFO - <Request: GET /add_star>
+2022-02-13 19:04:42,655 - bp_home - INFO - False
+2022-02-13 19:08:32,734 - bp_home - INFO - <Request: GET /add_star>
+2022-02-13 19:08:32,757 - bp_home - INFO - False
+2022-02-13 19:08:32,758 - bp_home - ERROR - Bad body type. Expected str, got bool)
+2022-02-13 19:08:33,237 - bp_home - INFO - <Request: GET /add_star>
+2022-02-13 19:08:33,241 - bp_home - INFO - False
+2022-02-13 19:08:33,242 - bp_home - ERROR - Bad body type. Expected str, got bool)
+2022-02-13 19:08:35,450 - bp_home - INFO - <Request: GET /add_star>
+2022-02-13 19:08:35,458 - bp_home - INFO - True
+2022-02-13 19:08:35,460 - bp_home - ERROR - Bad body type. Expected str, got bool)
+2022-02-13 19:15:30,706 - bp_home - INFO - <Request: GET /add_star>
+2022-02-13 19:15:30,720 - bp_home - INFO - False
+2022-02-13 19:15:31,457 - bp_home - INFO - <Request: GET /add_star>
+2022-02-13 19:15:31,464 - bp_home - INFO - True
+2022-02-13 19:15:56,135 - bp_home - INFO - <Request: GET /remove_star>
+2022-02-13 19:15:56,139 - bp_home - INFO - True
+2022-02-13 19:16:22,214 - bp_home - INFO - <Request: GET /remove_star>
+2022-02-13 19:16:22,217 - bp_home - INFO - False
+2022-02-13 19:16:34,015 - bp_home - INFO - <Request: GET /get_star>
+2022-02-13 19:16:34,020 - bp_home - INFO - [{'msg_id': 1, 'msg_text': '这是一条测试短信，这是一条测试短信，这是一条测试短信。'}, {'msg_id': 2, 'msg_text': '您好，我是北京沐某堂健康指导中心主任，恭喜您被抽中，原价***元的有抗癌保健等功效的保健产品现在仅需支付***元的体验费或产品检测费即可获赠'}, {'msg_id': 3, 'msg_text': '您好，您已抽中***晚会一等奖，奖品为价格一万余元的“纪念金币”等，先只需要支付个人所得税、保价费或奖品代销费等费用，即可免费获取。'}, {'msg_id': 4, 'msg_text': '*女士/先生：我是***网商家售后客服，您于****年**月**日在平台上购买的，订单号为*****的孕妇装化学染料超标，现在要为您免费办理退款。请您添加QQ号x*****，我将指导您操作退款。'}, {'msg_id': 5, 'msg_text': '*女士/先生：由于您的芝麻信用分不够，商家退还您的款项无法实际到账，您可通过大额转账增加资金往来的方式提高芝麻信用分，建议您通过贷款APP借钱，完成交易提高芝麻信用分之后再将钱还进去，收到转账后将一次性返还给您。'}]
+2022-02-13 19:28:29,163 - bp_home - INFO - <Request: GET /get_star>
+2022-02-13 19:28:29,175 - bp_home - INFO - [{'msg_id': 1, 'msg_text': '这是一条测试短信，这是一条测试短信，这是一条测试短信。'}, {'msg_id': 2, 'msg_text': '您好，我是北京沐某堂健康指导中心主任，恭喜您被抽中，原价***元的有抗癌保健等功效的保健产品现在仅需支付***元的体验费或产品检测费即可获赠'}, {'msg_id': 3, 'msg_text': '您好，您已抽中***晚会一等奖，奖品为价格一万余元的“纪念金币”等，先只需要支付个人所得税、保价费或奖品代销费等费用，即可免费获取。'}, {'msg_id': 4, 'msg_text': '*女士/先生：我是***网商家售后客服，您于****年**月**日在平台上购买的，订单号为*****的孕妇装化学染料超标，现在要为您免费办理退款。请您添加QQ号x*****，我将指导您操作退款。'}, {'msg_id': 5, 'msg_text': '*女士/先生：由于您的芝麻信用分不够，商家退还您的款项无法实际到账，您可通过大额转账增加资金往来的方式提高芝麻信用分，建议您通过贷款APP借钱，完成交易提高芝麻信用分之后再将钱还进去，收到转账后将一次性返还给您。'}]

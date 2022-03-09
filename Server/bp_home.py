@@ -50,8 +50,8 @@ async def message_search(request):
     logger.info(request)
     try:
         query = str(request.args.get('msg', '')).strip()
-        wx_id = int(request.args.get('id', ''))
-        result = await msg_search(query=query, flag=0.5, wx_id=wx_id)
+        wx_id = str(request.args.get('id', '')).strip()
+        result = await msg_search(query=query, flag=0.01, wx_id=wx_id)
         logger.info(result)
         return json(result, ensure_ascii=False)
     except Exception as e:

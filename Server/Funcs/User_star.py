@@ -115,7 +115,7 @@ async def get_user_star_list(wx_id: str) -> list:
 
 
 if __name__ == '__main__':
-    WX_id = 1
+    WX_id = '1'
     Msg_id = 3
     # res = asyncio.get_event_loop().run_until_complete(add_star(wx_id=WX_id, msg_id=Msg_id))
     # res = asyncio.get_event_loop().run_until_complete(remove_star(wx_id=WX_id, msg_id=Msg_id))

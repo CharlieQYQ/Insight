@@ -12,9 +12,10 @@ from sanic.response import json, text
 from Funcs.Message_search import msg_search
 from Funcs.Message_info import msg_info_search
 from Funcs.Query_record import query_record
+from Funcs.Get_openid import get_openid
+from Funcs.User_star import add_star, get_user_star_list, remove_star
 import logging
 import datetime
-from Funcs.User_star import add_star, get_user_star_list, remove_star
 # import asyncio
 
 # 配置日志
@@ -129,4 +130,18 @@ async def get_star(request):
     except Exception as e:
         logger.error(e)
         return text(e)
+
+
+# 获取用户openid
+@bp_home.route('/get_openid')
+async def get_openid(request):
+    logger.info(request)
+    try:
+        jscode = str(request.args.get('jscode', '')).strip()
+        result = await get_openid(js_code=jscode)
+        return text(result)
+    except Exception as e:
+        logger.error(e)
+        return False
+
 

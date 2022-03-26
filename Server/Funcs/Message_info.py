@@ -13,11 +13,12 @@ import pymysql
 
 
 # 查询函数
-async def msg_info_search(msg_id: int) -> dict:
+async def msg_info_search(msg_id: int, wx_id: str) -> dict:
     """
     函数名：msg_info_search
     作用：通过输入的短信编号查询短信相关信息
     :param msg_id: 短信编号
+    :param wx_id：微信用户openid
     :return: result_dict：结果字典
     """
 
@@ -45,6 +46,11 @@ async def msg_info_search(msg_id: int) -> dict:
             'laws': list(set(law_list)),
             'solutions': list(set(solution_list))
         }
+
+        # 2022.3.26 存入浏览记录
+        sql = """INSERT INTO query_record ( ID, Time, Msg_id ) VALUES ( %s, NOW(), %s)"""
+        cursor.execute(sql, [wx_id, int(msg_id)])
+        db.commit()
     except Exception as e:
         print(e)
 
@@ -52,5 +58,6 @@ async def msg_info_search(msg_id: int) -> dict:
 
 
 if __name__ == '__main__':
-    result = asyncio.get_event_loop().run_until_complete(msg_info_search(msg_id=15))
+    WX_id = "ovQCm4jh-FgYKARxJZ6_imgaYEOE"
+    result = asyncio.get_event_loop().run_until_complete(msg_info_search(msg_id=15, wx_id=WX_id))
     print(result)

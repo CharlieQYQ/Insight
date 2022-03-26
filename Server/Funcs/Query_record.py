@@ -33,7 +33,9 @@ async def query_record(wx_id: str) -> list:
         cursor = db.cursor(pymysql.cursors.DictCursor)
 
         # 依据微信ID查询数据库
-        cursor.execute("""SELECT * FROM query_record WHERE ID = %s""" % wx_id)
+        # 2022.3.16 如果直接把sql合并到execute里面，会报错
+        sql = """SELECT Time, msg_info.msg_text FROM query_record, msg_info WHERE ID = %s AND query_record.Msg_id = msg_info.msg_id"""
+        cursor.execute(sql, wx_id)
         record_cursor = cursor.fetchall()
 
         # 整理结果
@@ -41,7 +43,7 @@ async def query_record(wx_id: str) -> list:
             # print(row)
             record_data = {
                 'time': row['Time'].strftime('%Y-%m-%d %H:%M:%S'),
-                'query': row['Query']
+                'msg_text': row['msg_text']
             }
             result_list.append(record_data)
 
@@ -55,7 +57,7 @@ async def query_record(wx_id: str) -> list:
     return result_list
 
 if __name__ == '__main__':
-    WX_id = 1
+    WX_id = "ovQCm4jh-FgYKARxJZ6_imgaYEOE"
     res = asyncio.get_event_loop().run_until_complete(query_record(wx_id=WX_id))
     for i in range(0, len(res)):
         print(res[i])

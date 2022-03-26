@@ -22,7 +22,7 @@ stop_words = gen_stop_words()
 
 
 # 搜索函数
-async def msg_search(*, query: str, flag: float, wx_id: str) -> list:
+async def msg_search(*, query: str, flag: float) -> list:
     """
     函数名：msg_search
     作用：通过输入的短信内容搜索与之相关的短信案例，并存入历史记录
@@ -43,8 +43,9 @@ async def msg_search(*, query: str, flag: float, wx_id: str) -> list:
 
         # 2022.2.9
         # 存入查询记录
-        cursor.execute("""Insert INTO query_record ( ID, Time, Query ) VALUES ( '%s', NOW(), '%s')""" % (wx_id, query))
-        db.commit()
+        # 2022.3.26 将记录保存改为详情页保存
+        # cursor.execute("""Insert INTO query_record ( ID, Time, Query ) VALUES ( '%s', NOW(), '%s')""" % (wx_id, query))
+        # db.commit()
 
         # 查询语句分词
         seg_query = text_seg(text=query, stop_words=stop_words)

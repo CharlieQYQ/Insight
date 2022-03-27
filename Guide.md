@@ -11,9 +11,6 @@
 		- msg
 			- 查询的短信内容
 			- 字符串类型
-		- id
-			- 用户的微信ID
-			- 字符串类型
 	- 返回关键字（字典类型）
 		- msg_id
 			- 短信序号
@@ -29,6 +26,9 @@
 		- id
 			- 查询的短信序号
 			- 整型
+		- wx_id
+			- 微信用户的openid
+			- 字符串类型
 	- 返回关键字
 		- msg_text
 			- 短信内容
@@ -51,7 +51,7 @@
 	- 返回关键字
 		- time
 			- 查询时间，格式：YYYY-MM-DD hh-mm-ss
-		- query
+		- msg_text
 			- 查询文本
 4. 添加收藏接口
 	- 链接地址：http://abc.charlieqyq.top:32222/add_star

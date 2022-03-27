@@ -34,7 +34,7 @@ async def query_record(wx_id: str) -> list:
 
         # 依据微信ID查询数据库
         # 2022.3.16 如果直接把sql合并到execute里面，会报错
-        sql = """SELECT Time, msg_info.msg_text FROM query_record, msg_info WHERE ID = %s AND query_record.Msg_id = msg_info.msg_id"""
+        sql = """SELECT query_record.Msg_id, Time, msg_info.msg_text FROM query_record, msg_info WHERE ID = %s AND query_record.Msg_id = msg_info.msg_id"""
         cursor.execute(sql, wx_id)
         record_cursor = cursor.fetchall()
 
@@ -42,6 +42,7 @@ async def query_record(wx_id: str) -> list:
         for row in record_cursor:
             # print(row)
             record_data = {
+                'msg_id': row['Msg_id'],
                 'time': row['Time'].strftime('%Y-%m-%d %H:%M:%S'),
                 'msg_text': row['msg_text']
             }

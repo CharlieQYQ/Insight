@@ -17,6 +17,8 @@ from Funcs.User_star import add_star, get_user_star_list, remove_star
 import logging
 import datetime
 # import asyncio
+import gensim
+
 
 # 配置日志
 # 获取当前时间以命名日志文件
@@ -38,6 +40,13 @@ bp_home = Blueprint('bp_home')
 # 开启异步特性
 enable_async = sys.version_info >= (3, 6)
 
+# 2022.3.27
+# 加载模型
+model_file = './word2vec/news_12g_baidubaike_20g_novel_90g_embedding_64.bin'
+model = gensim.models.KeyedVectors.load_word2vec_format(model_file, binary=True)
+print("Model Load")
+logger.info("Model Loaded")
+
 
 # 设置路由
 @bp_home.route('/')
@@ -51,12 +60,12 @@ async def message_search(request):
     logger.info(request)
     try:
         query = str(request.args.get('msg', '')).strip()
-        result = await msg_search(query=query, flag=0.01)
+        result = await msg_search(query=query, flag=0.5, model=model)
         logger.info(result)
         return json(result, ensure_ascii=False)
     except Exception as e:
         logger.error(e)
-        return text(e)
+        return text(str(e))
 
 
 # 案例信息查询
@@ -71,7 +80,7 @@ async def message_info(request):
         return json(result, ensure_ascii=False)
     except Exception as e:
         logger.error(e)
-        return text(e)
+        return text(str(e))
 
 
 # 查询历史记录
@@ -85,7 +94,7 @@ async def history_query(request):
         return json(result, ensure_ascii=False)
     except Exception as e:
         logger.error(e)
-        return text(e)
+        return text(str(e))
 
 
 # 添加用户收藏
@@ -100,7 +109,7 @@ async def user_add_star(request):
         return json(result)
     except Exception as e:
         logger.error(e)
-        return text(e)
+        return text(str(e))
 
 
 # 删除用户收藏
@@ -115,7 +124,7 @@ async def user_remove_star(request):
         return json(result)
     except Exception as e:
         logger.error(e)
-        return text(e)
+        return text(str(e))
 
 
 # 获取用户收藏列表
@@ -129,7 +138,7 @@ async def get_star(request):
         return json(result, ensure_ascii=False)
     except Exception as e:
         logger.error(e)
-        return text(e)
+        return text(str(e))
 
 
 # 获取用户openid
@@ -143,5 +152,3 @@ async def get_openid(request):
     except Exception as e:
         logger.error(e)
         return False
-
-

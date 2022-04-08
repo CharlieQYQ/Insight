@@ -37,7 +37,7 @@ async def msg_search(*, query: str, flag: float, model) -> list:
     results = []
     if flag is None:
         # flag = 0.5
-        flag = 0.6
+        flag = 0.5
     try:
         # 打开数据库连接
         db = pymysql.connect(host="localhost", port=3306, user="root", password="root", database="Insight")
@@ -109,13 +109,15 @@ async def msg_search(*, query: str, flag: float, model) -> list:
                 results.append(row)
         """
         for row in msg_cursor:
+            # 计算相似度
+            sim = vector_similarity(s1=row['msg_text'], s2=query, model=model)
             msg_data = {
                 'msg_id': row['msg_id'],
                 'index': row['msg_text'],
-                'similarity': vector_similarity(s1=row['msg_text'], s2=query, model=model),
+                'similarity': "%.2f%%" % (sim*100),
                 'simi_times': row['simi_times']
             }
-            if msg_data['similarity'] >= flag:
+            if sim >= flag:
                 results.append(msg_data)
 
         # 根据阈值使相似次数自增

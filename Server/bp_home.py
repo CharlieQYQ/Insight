@@ -16,6 +16,7 @@ from Funcs.Get_openid import get_openid
 from Funcs.User_star import add_star, get_user_star_list, remove_star
 import logging
 import datetime
+from Funcs.Get_Category import get_category
 # import asyncio
 import gensim
 
@@ -149,6 +150,19 @@ async def get_openid(request):
         jscode = str(request.args.get('jscode', '')).strip()
         result = await get_openid(js_code=jscode)
         return text(result)
+    except Exception as e:
+        logger.error(e)
+        return False
+
+
+# 获取分类数据
+@bp_home.route('/get_category')
+async def get_kind(request):
+    logger.info(request)
+    try:
+        kind = int(request.args.get('kind', ''))
+        result = await  get_category(category=kind)
+        return json(result, ensure_ascii=False)
     except Exception as e:
         logger.error(e)
         return False

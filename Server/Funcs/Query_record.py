@@ -52,10 +52,16 @@ async def query_record(wx_id: str) -> list:
         cursor.close()
         # 关闭数据库连接
         db.close()
+
+        sorted_result_list = sorted(
+            result_list,
+            key=lambda k: datetime.datetime.strptime(k.get('time'), '%Y-%m-%d %H:%M:%S'),
+            reverse=True
+        )
+        return sorted_result_list
     except Exception as e:
         print("ERROR as -> ", e)
 
-    return result_list
 
 if __name__ == '__main__':
     WX_id = "ovQCm4jh-FgYKARxJZ6_imgaYEOE"

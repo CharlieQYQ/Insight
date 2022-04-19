@@ -37,6 +37,18 @@ async def msg_info_search(msg_id: int, wx_id: str) -> dict:
         for row in result_list:
             law_list.append(row['law_text'])
             solution_list.append(row['solution_text'])
+
+        # 2022.4.19 返回数据加入收藏情况
+        sql2 = """SELECT * FROM user_star WHERE ID = %s AND msg_id = %s """
+        # 通过返回结果个数判断是否存在此条收藏记录
+        is_star = cursor.execute(sql2, [wx_id, msg_id])
+        star = False
+        # 0条结果为没有收藏，1条结果为已收藏，其他情况不可能出现
+        if is_star == 0:
+            star = False
+        elif is_star == 1:
+            star = True
+
         # 整理字典
         result_dict = {
             'msg_text': result_list[0]['msg_text'],
@@ -44,7 +56,8 @@ async def msg_info_search(msg_id: int, wx_id: str) -> dict:
             'simi_times': result_list[0]['simi_times'],
             'kind_name': result_list[0]['kind_name'],
             'laws': list(set(law_list)),
-            'solutions': list(set(solution_list))
+            'solutions': list(set(solution_list)),
+            'is_star': star
         }
 
         # 2022.3.26 存入浏览记录

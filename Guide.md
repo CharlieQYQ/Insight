@@ -21,27 +21,29 @@
 		- cs_value
 			- 余弦相似度
 2. 短信详情接口
-	- 链接地址：http://abc.charlieqyq.top:32222/msg_info
-	- 请求关键字
-		- id
-			- 查询的短信序号
-			- 整型
-		- wx_id
-			- 微信用户的openid
-			- 字符串类型
-	- 返回关键字
-		- msg_text
-			- 短信内容
-		- msg_analiysis
-			- 案例分析
-		- simi_times
-			- 相似度超过阈值次数（即返回次数）
-		- kind_name
-			- 案例类别
-		- laws
-			- 相关法条
-		- solutions
-			- 解决方法
+    - 链接地址：http://abc.charlieqyq.top:32222/msg_info
+    - 请求关键字
+        - id
+            - 查询的短信序号
+            - 整型
+        - wx_id
+            - 微信用户的openid
+            - 字符串类型
+    - 返回关键字
+        - msg_text
+            - 短信内容
+        - msg_analiysis
+            - 案例分析
+        - simi_times
+            - 相似度超过阈值次数（即返回次数）
+        - kind_name
+            - 案例类别
+        - laws
+            - 相关法条
+        - solutions
+            - 解决方法
+        - star
+            - 是否收藏
 3. 历史记录接口
 	- 链接地址：http://abc.charlieqyq.top:32222/query_record
 	- 请求关键字
